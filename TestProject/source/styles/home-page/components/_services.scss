@@ -1,0 +1,242 @@
+.services{
+    padding: 50px 0;
+
+    &__card{
+        background: $global-white-bg;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 10px 15px rgba(79, 87, 92, 0.1);
+
+        @media (min-width: 1024px) {
+            margin-top: 40px;
+        }
+    }
+
+    &__heading{
+        margin-top: 50px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        color: $global-black;
+
+        @media (min-width: 1024px) {
+            font-size: 32px;
+            line-height: 45px;
+        }
+    }
+
+    &__body {
+        @media (min-width: 1024px) {
+            display: flex;
+            justify-content: space-between;
+            
+            &-reverse  {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    &__image {
+        min-width: 384px;
+
+        img{
+            width: 384px;
+            vertical-align: top;
+        }
+    }
+
+
+    &__content{
+        padding: 20px 10px;
+        position: relative;
+        max-width: calc(1128px - 384px);
+
+        @media (min-width: 1024px) {
+            padding: 48px 96px;
+        }
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25.2px;
+        color: $global-black;
+
+        @media (min-width: 1024px) {
+            font-size: 24px;
+            line-height: 34px;
+        }
+    }
+
+    &__description{
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $global-black;
+
+        @media (min-width: 1024px) {
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+
+    &__line{
+        margin: 0 auto;
+        margin-top: 20px;
+        width: calc(100% - 20px);
+        border: 1px solid rgba(79, 87, 92, 0.1);
+    }
+
+    &__activ{
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item{
+        display: inline-block;
+
+        &:not(:last-of-type) {
+            margin-right: 16px;
+        }
+    }
+
+    &__down{
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        max-height: 0;
+        background: $global-white-bg;
+        box-shadow: 0 10px 15px rgba(79, 87, 92, 0.1);
+        z-index: 10;
+        transition:  0.3s;
+        border-radius: 0px 0px 10px 10px;
+
+        &_content{
+            padding-left: 20px;
+            margin-left: 96px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: $global-black;
+
+            ul {
+                list-style: initial;
+            }            
+
+            @media (min-width: 1024px) {
+                font-size: 18px;
+                padding: 0 20px 20px 20px;
+            } 
+        }
+        
+        &_active {
+            text-align: right;
+            margin: 20px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: $global-blue;
+        }
+
+        @media (min-width: 1024px) {
+            &_active {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+
+    span {
+        display: none;
+    }
+
+    .services__button:active + .services__down , .services__down:active {
+        visibility: visible;
+        opacity: 1;
+        max-height: max-content;
+    }
+}
+
+
+@media ( min-width: 1024px ) {
+    .services__button:hover + .services__down , .services__down:hover {
+        visibility: visible;
+        opacity: 1;
+        max-height: max-content;
+    }
+}
+
+.services__button {
+    background: rgba($global-blue, .8);
+    padding: 0;
+    position: relative;
+    display: block;
+    transition: .3s;
+    display: flex;
+    overflow: hidden;
+
+    @media (max-width: 1023px) {
+        &:active ,
+        &:focus {
+        background: $global-blue;
+
+            svg {
+                transition: .3s;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        background: $global-blue;
+
+        span {
+            max-width: 0;
+            transition: all .3s;
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            left: 0;
+            margin-left: 12px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: $global-white-bg; 
+        }
+
+        svg {
+            margin-right: 10px;
+        }
+
+        &:hover {
+            width: 161px;
+            background: rgba($global-blue, .8);
+
+            span {
+                transition: all .3s;
+                position: absolute;
+                max-width: 100%;
+            }
+
+            svg {
+                transform: scale(0.9);
+                transition: transform .1s;
+            }
+        }
+    }
+}
+
+
+
+

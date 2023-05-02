@@ -1,0 +1,149 @@
+.conacts {
+    padding: 50px 0;
+
+    &__title {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        color: $global-black;
+    }
+}
+
+.callback {
+    margin-top: 20px;
+
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        color: $global-black;
+    }
+}
+
+.form {
+    // margin: 0 auto;
+
+    &__row {
+        position: relative;
+        border-bottom: 1px solid #D6D6D2;
+        margin-top: 30px;
+
+        input {
+            border: none;
+            padding: 16px;
+            text-indent: 10px;
+        }
+
+        textarea {
+            padding: 16px;
+            text-indent: 10px;
+            resize: vertical;
+            overflow: hidden;
+        }
+
+        input[placeholder] , textarea[placeholder] {
+            opacity: 0;
+            border: none;
+            transition: all .3s;
+        }    
+    }
+
+    &__label {
+        position: absolute;
+        left: 16px;
+        bottom: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $global-dark-grey;
+        transition: all .3s;
+    }
+
+    &__action {
+        margin-top: 20px;
+
+        @media (min-width: 768px) {
+            width: 340px;
+            margin-left: auto;
+        }
+    }
+
+    &__button {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__confirm {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: rgba(79, 87, 92, 0.8); //$global-dark-grey .8
+    }
+}
+
+.form__row:hover > .form__label {
+    position: absolute;
+    bottom:  36px;
+    left: 14px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $global-blue;
+}
+
+.form__row:hover input[placeholder] ,.form__row:hover textarea[placeholder] {
+    opacity: 1;
+}
+
+.form__row:hover {
+    border-bottom: 1px solid $global-blue;
+}
+
+.address {
+    margin-top: 50px;
+
+    &__row:not(:first-of-type) {
+        margin-top: 30px;
+    }
+
+    &__country {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        color: $global-black;
+    }
+
+    &__city {
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $global-dark-grey;
+    }
+
+    &__email {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $global-dark-grey;
+    }
+}
+
+.sotial {
+    margin-top: 30px;
+
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $global-dark-grey;
+    }
+
+    &__flex {
+        margin-top: 24px;
+        display: flex;
+        gap: 60px;
+    }
+}
